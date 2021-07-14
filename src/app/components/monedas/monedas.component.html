@@ -40,7 +40,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let moneda of monedasArray">
+        <tr *ngFor="let moneda of monedasArray | paginate : {itemsPerPage: 7, currentPage: pageChanged}">
             <th class="table-primary" scope="row">{{moneda.id}}</th>
             <td>{{moneda.moneda}}</td>
             <td>{{moneda.fecha}}</td>
@@ -49,4 +49,5 @@
         </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="pageChanged = $event"></pagination-controls>
 </div>

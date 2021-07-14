@@ -21,6 +21,7 @@ export class MonedasComponent implements OnInit {
 
   }
 
+  pageChanged:number=1;
   first:string="";
   second:string="";
   monedasArray: MonedaInterface[]=[];
@@ -32,6 +33,8 @@ export class MonedasComponent implements OnInit {
       this.alertConfirm();
     });
   }
+
+
 
   alertConfirm(){
   Swal.fire({

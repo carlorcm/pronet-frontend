@@ -8,6 +8,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { PrincipalService } from './services/principal.service';
 import { MonedasComponent } from './components/monedas/monedas.component';
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MonedasComponent } from './components/monedas/monedas.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [PrincipalService],
   bootstrap: [AppComponent]
