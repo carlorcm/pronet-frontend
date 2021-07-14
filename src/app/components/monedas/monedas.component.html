@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pronet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tipo Cambio</a>
+          </li>          
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="content p-4">
+    <div class="input-group mt-2 mb-3">
+        <span class="input-group-text">DESDE:</span>
+        <input [(ngModel)]="first" name="first" type="text" aria-label="First name" class="form-control">
+        <span class="input-group-text">HASTA:</span>
+        <input [(ngModel)]="second" name="second" type="text" aria-label="Last name" class="form-control">
+        <button (click)="tipoCambioRango()" class="btn btn-outline-primary" type="button" id="button-addon1">Consultar</button>
+      </div>
+    <table class="table table-warning">
+        <thead>
+        <tr class="table-primary">
+            <th scope="col">ID_PETICION</th>
+            <th scope="col">ID_MONEDA</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">VENTA</th>
+            <th scope="col">COMPRA</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let moneda of monedasArray">
+            <th class="table-primary" scope="row">{{moneda.id}}</th>
+            <td>{{moneda.moneda}}</td>
+            <td>{{moneda.fecha}}</td>
+            <td>{{moneda.venta}}</td>
+            <td>{{moneda.compra}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
